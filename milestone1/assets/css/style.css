@@ -42,14 +42,14 @@ i {
 
 /* parte sinistra */
 
-.user {
+.main-user {
   width: 100%;
   display: flex;
   justify-content: space-between;
   height: 50px;  
 }
 
-.user-image {
+.main-user-image {
   width: 20%;
   display: flex;
   align-items: center;
@@ -57,19 +57,19 @@ i {
   padding: 10px;
 }
 
-.user-image img {
+.main-user-image img {
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.user-icons {
+.main-user-icons {
   display: flex;
   align-items: center;
   padding: 10px;
 }
 
-.user-icons i {
+.main-user-icons i {
   margin-left: 10px;
 }
 
@@ -100,6 +100,7 @@ i {
 }
 
 .input-area {
+  height: 50px;
   display: flex;
   padding: 10px 2px;
   text-align: right;
@@ -120,5 +121,46 @@ i {
   margin-right: 0;
   padding: 5px 20px;
   text-align: center;
+  line-height: 20px;
   width: 50px;
+}
+
+.users-list {
+  width: 100%;
+  list-style: none;
+  height: calc(100% - 160px);
+  overflow: scroll;
+  background-color: white;
+}
+
+.users-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.users-list li:not(:first-child) {
+  border-top: 1px solid #eaeaea ;
+}
+
+.users-list .user-info {
+  display: flex;
+  align-items: center;
+
+}
+
+.users-list li img {
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px ;
+}
+
+.users-list li h4 {
+  font-size: 14px;
+}
+
+.users-list li span {
+  font-size: 10px;
+  color: #b1b1b1;
+  font-weight: bold;
 }
