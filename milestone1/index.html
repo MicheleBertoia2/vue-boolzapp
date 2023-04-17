@@ -52,12 +52,12 @@
           
           <!-- sezione della lista contatti -->
           <ul class="users-list">
-            <li class="active">
+            <li v-for="(contact,index) in contacts">
 
               <div class="user-info">
-                <img src="assets/img/avatar_1.jpg" alt="avatar1">
+                <img :src="contact.avatar" alt="avatar1">
                 <div class="text">
-                  <h4>Michele</h4>
+                  <h4>{{contact.name}}</h4>
                   <span>Ultimo messaggio inviato alle</span>
                 </div>
               </div>
