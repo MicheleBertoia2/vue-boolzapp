@@ -10,10 +10,15 @@ body {
 
 h4 {
   font-size: 14px;
+  font-weight: 400;
 }
 
 i {
   color: #b1b1b1;
+}
+
+input {
+  text-indent: 10px;
 }
 
 .main-wrapper {
@@ -216,4 +221,19 @@ i {
 
 .bot-bar {
   height: 50px;
+  background-color: #f3eeea;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.bot-bar input {
+  width: 80%;
+  height: 35px;
+  border-color: #e1e1e1 ;
+  border-radius: 5px;
+}
+
+.bot-bar i {
+  color: #7d7b77;
 }
