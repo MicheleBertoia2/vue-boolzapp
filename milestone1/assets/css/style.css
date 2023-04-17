@@ -194,10 +194,24 @@ i {
   padding: 15px 10px;
   border-radius: 10px;
   font-size: 10px;
-  /*debug*/
-  margin-left: auto;
-  background-color: red;
+  margin-bottom: 10px;
+}
 
+.chat .message.sent {
+  margin-left: auto;
+  background-color: #d5f9ba;
+}
+
+.chat .message.received {
+  background-color: white;
+}
+
+.chat .message .time {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 7px;
+  color: #b0aea8;
 }
 
 .bot-bar {
