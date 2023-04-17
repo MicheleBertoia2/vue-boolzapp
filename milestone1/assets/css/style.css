@@ -185,6 +185,19 @@ i {
 .chat {
   height: calc(100% - 100px);
   background-image: url(../img/mine.jpg);
+  padding: 40px 70px;
+}
+
+.chat .message {
+  position: relative;
+  width: 230px;
+  padding: 15px 10px;
+  border-radius: 10px;
+  font-size: 10px;
+  /*debug*/
+  margin-left: auto;
+  background-color: red;
+
 }
 
 .bot-bar {
