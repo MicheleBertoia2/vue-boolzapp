@@ -25,6 +25,15 @@ createApp({
       }
       this.contacts[this.activeUser].messages.push(newMsg)
       this.newMsgString = ''
+
+      setTimeout(() =>{
+        const newMsg = {
+          date: '10/01/2020 15:30:55',
+          message: 'ok',
+          status: 'received'
+        }
+        this.contacts[this.activeUser].messages.push(newMsg)
+      },2000)
     }
   },
 
