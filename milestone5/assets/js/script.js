@@ -19,7 +19,6 @@ createApp({
   methods : {
     selectUser(index){
       this.activeUser = index
-      console.log(contacts[index].visible);
     },
 
     sendMessage(){
@@ -49,6 +48,12 @@ createApp({
           contact.visible = false;
         }
       });
+    },
+
+    deleteMsg(ind){
+      // console.log(this.contacts[this.activeUser].messages[ind]);
+      this.contacts[this.activeUser].messages.splice(ind,1)
+      this.isSelected = false
     }
 
     

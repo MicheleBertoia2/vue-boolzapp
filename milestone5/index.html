@@ -63,12 +63,14 @@
                     <img :src="contact.avatar" alt="avatar1">
                     <div class="text">
                       <h4>{{contact.name}}</h4>
-                      <span>{{contact.messages[contact.messages.length - 1].message}}</span>
+                      <span v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length - 1].message}}</span>
+                      <span v-else></span>
                     </div>
                   </div>
     
                   <div class="latest-access">
-                    <span>{{contact.messages[contact.messages.length - 1].date}}</span>
+                    <span v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length - 1].date}}</span>
+                    <span v-else></span>
                   </div>
               </div>
 
@@ -102,8 +104,8 @@
           <div class="chat" >            
 
             <div class="chat-box">
-              <div class="message" 
-                v-for="(message) in contacts[activeUser].messages"
+              <div v-if="contacts[activeUser].messages.length > 0" class="message" 
+                v-for="(message, ind) in contacts[activeUser].messages"
                 :class="{'sent' : message.status === 'sent'},{'received' : message.status === 'received'}">
                   <span>{{message.message}}</span>
                   <span class="time">{{message.date}}</span>
@@ -111,9 +113,13 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                     <ul class="drop-menu">
                       <li>Informazioni Messaggio</li>
-                      <li>Cancella Messaggio</li>
+                      <li @click.stop="deleteMsg(ind)">Cancella Messaggio</li>
                     </ul>
                   </div>
+              </div>
+
+              <div v-else>
+                <h2>non ci sono messaggi</h2>
               </div>
             </div>     
 
