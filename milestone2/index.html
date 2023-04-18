@@ -93,17 +93,23 @@
 
           </div>
 
-          <div class="chat">
+          <div class="chat" >
+            
 
-            <div class="message sent">
+            <div class="chat-box">
+              <div class="message" 
+                v-for="message in contacts[activeUser].messages"
+                :class="{'sent' : message.status === 'sent'},{'received' : message.status === 'received'}">
+                  <span>{{message.message}}</span>
+                  <span class="time">{{message.date}}</span>
+              </div>
+            </div>
+          
+
+            <!-- <div class="message received">
               <span>ciao!</span>
               <span class="time">15:00</span>
-            </div>
-
-            <div class="message received">
-              <span>ciao!</span>
-              <span class="time">15:00</span>
-            </div>
+            </div> -->
 
           </div>
 
