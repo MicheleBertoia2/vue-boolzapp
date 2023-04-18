@@ -6,8 +6,15 @@ createApp({
   data() {
 
     return{
-      contacts
+      contacts,
+      activeUser : null,
     }    
+  },
+
+  methods : {
+    selectUser(index){
+      this.activeUser = index
+    }
   },
 
   mounted(){

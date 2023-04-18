@@ -52,7 +52,7 @@
           
           <!-- sezione della lista contatti -->
           <ul class="users-list">
-            <li v-for="(contact,index) in contacts">
+            <li v-for="(contact,index) in contacts" :class="{'active' : activeUser === index}" @click="selectUser(index)">
 
               <div class="user-info">
                 <img :src="contact.avatar" alt="avatar1">
