@@ -22,4 +22,9 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 ### milestone 1
 1. creo il mark-up html della struttura 
 2. inizializzo vue e copio l'array degli utenti in data
-3. stampo la lista degli utenti in pagina 
+3. stampo la lista degli utenti in pagina
+
+### milestone 2
+1. attivazione al click del contatto
+2. visualizzazione nella top bar della chat del contatto attivo
+3. ciclo v-for nei messaggi del contatto attivo con binding della classe per gli inviati e i ricevuti
