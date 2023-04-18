@@ -227,6 +227,43 @@ input {
   color: #b0aea8;
 }
 
+.chat .message .drop-down {
+  text-align: right;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  display: none;
+  cursor: pointer;
+}
+
+.drop-menu {
+  width: 150px;
+  position: absolute;
+  top: 35px;
+  right: -65px;
+  list-style: none;
+  z-index: 3;
+  display: none;
+}
+
+.drop-menu li {
+  background-color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.drop-menu li:hover {
+  background-color: #b1b1b1;
+}
+
+.chat .message:hover .drop-down {
+  display: block;
+}
+
+.chat .message .drop-down.selected .drop-menu {
+  display: block;
+}
+
 .bot-bar {
   height: 50px;
   background-color: #f3eeea;

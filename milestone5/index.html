@@ -107,6 +107,13 @@
                 :class="{'sent' : message.status === 'sent'},{'received' : message.status === 'received'}">
                   <span>{{message.message}}</span>
                   <span class="time">{{message.date}}</span>
+                  <div class="drop-down">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <ul class="drop-menu">
+                      <li>Informazioni Messaggio</li>
+                      <li>Cancella Messaggio</li>
+                    </ul>
+                  </div>
               </div>
             </div>     
 
