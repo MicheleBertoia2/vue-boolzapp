@@ -32,3 +32,8 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 ### milestone 3
 1. creo una funzione che prende la stringa v-model dell'input, inpacchetta un nuovo oggetto e lo pusha nell'array dei messaggi dell'utente
 2. creo una timing function legata all'evento enter del nuvo messaggio che crea un'ulteriore oggetto nuovo nei messaggi del contatto come risposta
+
+### milestone 4
+1. bindare un v-model all'input
+2. ad ogni pressione dei tasti di scrittura deve partire una funzione
+3. questa funzione controlla se la stringa del v-model è inclusa nel nome del contatto e di conseguenza lo rende visibile o meno
