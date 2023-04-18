@@ -12,6 +12,7 @@ createApp({
       newMsgString : '',
       dateSent : dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
       searchStr : '',
+      isSelected : false,
     }    
   },
 

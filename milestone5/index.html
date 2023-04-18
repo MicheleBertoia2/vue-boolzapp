@@ -103,11 +103,11 @@
 
             <div class="chat-box">
               <div class="message" 
-                v-for="message in contacts[activeUser].messages"
+                v-for="(message) in contacts[activeUser].messages"
                 :class="{'sent' : message.status === 'sent'},{'received' : message.status === 'received'}">
                   <span>{{message.message}}</span>
                   <span class="time">{{message.date}}</span>
-                  <div class="drop-down">
+                  <div class="drop-down" :class="{'selected' : isSelected}" @click="isSelected = !isSelected">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                     <ul class="drop-menu">
                       <li>Informazioni Messaggio</li>
