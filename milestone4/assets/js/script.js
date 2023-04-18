@@ -10,13 +10,15 @@ createApp({
       contacts,
       activeUser : 0,
       newMsgString : '',
-      dateSent : dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
+      dateSent : dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+      searchStr : '',
     }    
   },
 
   methods : {
     selectUser(index){
       this.activeUser = index
+      console.log(contacts[index].visible);
     },
 
     sendMessage(){
@@ -36,10 +38,26 @@ createApp({
         }
         this.contacts[this.activeUser].messages.push(newMsg)
       },1000)
+    },
+
+    filterSearch(){
+      this.contacts.forEach(contact => {
+        if(contact.name.toLowerCase().includes(this.searchStr.toLowerCase())){
+          contact.visible = true;
+        } else {
+          contact.visible = false;
+        }
+      });
     }
+
+    
   },
 
-  mounted(){
+  computed : {
+    
+  },
+
+  mounted(){    
   }
 
 }).mount('#app')

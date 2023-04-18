@@ -50,23 +50,26 @@
           
           <div class="input-area">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Cerca o inizia una nuova chat">
+            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchStr" @keyup="filterSearch()">
           </div>
           
           <!-- sezione della lista contatti -->
           <ul class="users-list">
-            <li v-for="(contact,index) in contacts" :class="{'active' : activeUser === index}" @click="selectUser(index)">
-
-              <div class="user-info">
-                <img :src="contact.avatar" alt="avatar1">
-                <div class="text">
-                  <h4>{{contact.name}}</h4>
-                  <span>Ultimo messaggio inviato alle</span>
-                </div>
-              </div>
-
-              <div class="latest-access">
-                <span>12.00</span>
+            <li v-for="(contact,index) in contacts" 
+                :class="{'active' : activeUser === index}" @click="selectUser(index)" >
+                
+              <div class="card-user" v-if="contact.visible == true">
+                  <div class="user-info">
+                    <img :src="contact.avatar" alt="avatar1">
+                    <div class="text">
+                      <h4>{{contact.name}}</h4>
+                      <span>Ultimo messaggio inviato alle</span>
+                    </div>
+                  </div>
+    
+                  <div class="latest-access">
+                    <span>{{contact.messages[contact.messages.length - 1].date}}</span>
+                  </div>
               </div>
 
             </li>

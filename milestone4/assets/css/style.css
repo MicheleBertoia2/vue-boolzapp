@@ -21,6 +21,10 @@ input {
   text-indent: 10px;
 }
 
+.hide {
+  display: none;
+}
+
 .main-wrapper {
   height: 100vh;
   width: 100%;
@@ -145,15 +149,14 @@ input {
   background-color: white;
 }
 
-.users-list li {
+.users-list li .card-user {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-}
-
-.users-list li:not(:first-child) {
   border-top: 1px solid #eaeaea ;
 }
+
+
 
 .users-list .user-info {
   display: flex;
