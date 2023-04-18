@@ -63,7 +63,7 @@
                     <img :src="contact.avatar" alt="avatar1">
                     <div class="text">
                       <h4>{{contact.name}}</h4>
-                      <span>Ultimo messaggio inviato alle</span>
+                      <span>{{contact.messages[contact.messages.length - 1].message}}</span>
                     </div>
                   </div>
     
