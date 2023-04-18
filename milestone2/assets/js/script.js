@@ -7,7 +7,7 @@ createApp({
 
     return{
       contacts,
-      activeUser : null,
+      activeUser : 0,
     }    
   },
 

@@ -74,13 +74,13 @@
 
         <!-- parte destra -->
         <div class="right-side">
-          <div class="top-bar">
+          <div class="top-bar" >
 
-            <div class="active-user">
+            <div class="active-user" >
               <div class="active-user-image">
-                <img src="assets/img/avatar_1.jpg" alt="active-user">
+                <img  :src="contacts[activeUser].avatar" alt="active-user">
                 <div>
-                  <h4>Michele</h4>
+                  <h4>{{contacts[activeUser].name}}</h4>
                   <span>Ultimo accesso oggi alle 12.00</span>
                 </div>
               </div>
