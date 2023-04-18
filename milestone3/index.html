@@ -93,8 +93,7 @@
 
           </div>
 
-          <div class="chat" >
-            
+          <div class="chat" >            
 
             <div class="chat-box">
               <div class="message" 
@@ -103,19 +102,13 @@
                   <span>{{message.message}}</span>
                   <span class="time">{{message.date}}</span>
               </div>
-            </div>
-          
-
-            <!-- <div class="message received">
-              <span>ciao!</span>
-              <span class="time">15:00</span>
-            </div> -->
+            </div>     
 
           </div>
 
           <div class="bot-bar">
             <i class="fa-regular fa-face-smile"></i>
-            <input type="text" placeholder="Scrivi un messaggio">
+            <input type="text" placeholder="Scrivi un messaggio" v-model="newMsgString" @keyup.enter="sendMessage">
             <i class="fa-solid fa-microphone"></i>
           </div>
         </div>
