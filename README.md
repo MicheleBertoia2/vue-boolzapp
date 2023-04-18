@@ -36,4 +36,9 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 ### milestone 4
 1. bindare un v-model all'input
 2. ad ogni pressione dei tasti di scrittura deve partire una funzione
-3. questa funzione controlla se la stringa del v-model è inclusa nel nome del contatto e di conseguenza lo rende visibile o meno
+3. questa funzione controlla se la stringa del v-model è inclusa nel nome del contatto e di conseguenza lo rende visibile o
+
+### milestone 5
+1. aggiunta del mark-up in html
+2. al click del bottone si apre il menu
+3. andando su cancella messaggio, una funzione farà lo splice del messaggio in quel punto (attenzione alla propagazione dei click quindi aggiungerò .stop al click della cancellazione messaggio)
