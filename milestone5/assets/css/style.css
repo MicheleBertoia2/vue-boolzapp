@@ -194,6 +194,7 @@ input {
   height: calc(100% - 100px);
   background-image: url(../img/mine.jpg);
   padding: 40px 70px;
+  overflow-y: scroll;
 }
 
 .chat .message {
