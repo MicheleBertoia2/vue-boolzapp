@@ -28,3 +28,7 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 1. attivazione al click del contatto
 2. visualizzazione nella top bar della chat del contatto attivo
 3. ciclo v-for nei messaggi del contatto attivo con binding della classe per gli inviati e i ricevuti
+
+### milestone 3
+1. creo una funzione che prende la stringa v-model dell'input, inpacchetta un nuovo oggetto e lo pusha nell'array dei messaggi dell'utente
+2. creo una timing function legata all'evento enter del nuvo messaggio che crea un'ulteriore oggetto nuovo nei messaggi del contatto come risposta
