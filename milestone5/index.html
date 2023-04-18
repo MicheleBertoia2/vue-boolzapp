@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- FONTAWESOME -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
+
+  <!-- CDN VUE -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.min.js' integrity='sha512-DJ2+sosWB5FnZAIeCWAHu2gxQ7Gi438oOZLcBQSOrW8gD0s7LIXDv/5RW76B3FcljF40BXnfqNIo6Dhp7dFHJg==' crossorigin='anonymous'></script>
+
+  <!-- CDN LUXON -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js' integrity='sha512-KKbQg5o92MwtJKR9sfm/HkREzfyzNMiKPIQ7i7SZOxwEdiNCm4Svayn2DBq7MKEdrqPJUOSIpy1v6PpFlCQ0YA==' crossorigin='anonymous'></script>
+
+
+  <title>Boolzapp</title>
+</head>
+<body>
+
+  <div id="app">
+    <div class="main-wrapper">
+      <div class="boolzapp">
+        <!-- parte sinistra -->
+        <div class="left-side">
+          
+          <div class="main-user">
+            <div class="main-user-image">
+              <img src="assets/img/avatar_io.jpg" alt="main-user">
+              <h4>Sofia</h4>
+            </div>
+            <div class="main-user-icons">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          
+          <div class="notifications">
+            <i class="fa-solid fa-bell-slash"></i>
+            <div class="text">
+              <h4>Ricevi notifiche dei nuovi messaggi</h4>
+              <a href="#">Attiva notifiche desktop </a>
+            </div>
+          </div>
+          
+          <div class="input-area">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchStr" @keyup="filterSearch()">
+          </div>
+          
+          <!-- sezione della lista contatti -->
+          <ul class="users-list">
+            <li v-for="(contact,index) in contacts" 
+                :class="{'active' : activeUser === index}" @click="selectUser(index)" >
+                
+              <div class="card-user" v-if="contact.visible == true">
+                  <div class="user-info">
+                    <img :src="contact.avatar" alt="avatar1">
+                    <div class="text">
+                      <h4>{{contact.name}}</h4>
+                      <span>Ultimo messaggio inviato alle</span>
+                    </div>
+                  </div>
+    
+                  <div class="latest-access">
+                    <span>{{contact.messages[contact.messages.length - 1].date}}</span>
+                  </div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- parte destra -->
+        <div class="right-side">
+          <div class="top-bar" >
+
+            <div class="active-user" >
+              <div class="active-user-image">
+                <img  :src="contacts[activeUser].avatar" alt="active-user">
+                <div>
+                  <h4>{{contacts[activeUser].name}}</h4>
+                  <span>Ultimo accesso oggi alle 12.00</span>
+                </div>
+              </div>
+              <div class="active-user-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>                
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="chat" >            
+
+            <div class="chat-box">
+              <div class="message" 
+                v-for="message in contacts[activeUser].messages"
+                :class="{'sent' : message.status === 'sent'},{'received' : message.status === 'received'}">
+                  <span>{{message.message}}</span>
+                  <span class="time">{{message.date}}</span>
+              </div>
+            </div>     
+
+          </div>
+
+          <div class="bot-bar">
+            <i class="fa-regular fa-face-smile"></i>
+            <input type="text" placeholder="Scrivi un messaggio" v-model="newMsgString" @keyup.enter="sendMessage">
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+
+  <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>
