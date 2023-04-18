@@ -1,5 +1,6 @@
 import contacts from './db.js'
 const {createApp} = Vue;
+const dt = luxon.DateTime;
 
 createApp({
 
@@ -9,6 +10,7 @@ createApp({
       contacts,
       activeUser : 0,
       newMsgString : '',
+      dateSent : dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
     }    
   },
 
@@ -19,7 +21,7 @@ createApp({
 
     sendMessage(){
       const newMsg = {
-        date: '10/01/2020 15:30:55',
+        date: this.dateSent,
         message: this.newMsgString,
         status: 'sent'
       }
@@ -28,12 +30,12 @@ createApp({
 
       setTimeout(() =>{
         const newMsg = {
-          date: '10/01/2020 15:30:55',
+          date: this.dateSent,
           message: 'ok',
           status: 'received'
         }
         this.contacts[this.activeUser].messages.push(newMsg)
-      },2000)
+      },1000)
     }
   },
 
